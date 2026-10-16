@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#11273b" />
+  <meta name="description" content="A self-directed HRE4M Unit 1.8 group planner linking virtue, moral choice, human dignity, and God." />
+  <title>Virtue in Real Life | HRE4M Activity Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#mainContent">Skip to activity</a>
+  <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="../../index.html" aria-label="Return to HRE4M Activity Hub"><span class="brandmark" aria-hidden="true">✦</span><span><strong>HRE4M</strong><small>ACTIVITY HUB</small></span></a>
+    <div class="topmeta"><span class="pill">UNIT 1.8</span><span class="save-status" id="saveStatus" role="status" aria-live="polite">Checking local save…</span></div>
+  </header>
+  <div class="workspace">
+    <aside class="rail" aria-label="Activity stages">
+      <div class="rail-intro"><div class="eyebrow">YOUR GROUP WORKSPACE</div><h2>Virtue<br><em>in real life.</em></h2><p>One presentation. One meaningful decision. One set of rough notes.</p></div>
+      <div class="progress-head"><span>Planning progress</span><strong id="progressLabel">0 / 12</strong></div>
+      <div class="progress-track" role="progressbar" aria-label="Planning fields completed" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="progressTrack"><div id="progressFill"></div></div>
+      <nav id="stepNav" class="step-nav"></nav>
+      <div class="rail-footer"><span>Rough work</span><strong>10 / 50 marks</strong><small>Quality matters more than length.</small></div>
+    </aside>
+    <main id="mainContent" class="main" tabindex="-1">
+      <div id="storageWarning" class="notice warning" hidden role="alert"></div>
+      <div id="stepContent"></div>
+      <div class="step-actions"><button id="prevBtn" type="button" class="btn btn-outline">← Previous</button><span class="step-counter" id="stepCounter"></span><button id="nextBtn" type="button" class="btn btn-primary">Continue →</button></div>
+    </main>
+  </div>
+  <footer class="site-footer"><span>HRE4M1 • Christ and Culture • Unit 1.8</span><div><button class="text-button" id="quickExport" type="button">Download backup</button><button class="text-button" id="quickImport" type="button">Restore a file</button></div></footer>
+  <input type="file" id="importFile" accept=".json,application/json" hidden />
+  <section id="printArea" class="print-area" aria-label="Printable planning record"></section>
+</body>
+</html>
