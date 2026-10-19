@@ -8,6 +8,7 @@ When GitHub Pages is enabled for the `main` branch, students open:
 
 - **Course hub:** `https://fslb10.github.io/4M-Activity-Hub/`
 - **Unit 1.8 - Virtue in Real Life:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/virtue-presentations/`
+- **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
 
 ## Repository structure
 
@@ -17,10 +18,12 @@ When GitHub Pages is enabled for the `main` branch, students open:
 ├── README.md                     # Repo-wide structure and maintenance
 ├── .nojekyll                     # Serve static HTML/CSS/JS directly
 └── unit-1/
-    └── virtue-presentations/
-        ├── index.html            # Accessible guided planner
-        ├── styles.css            # Standalone app stylesheet
-        └── app.js                # Logic, learning content and save/export
+    ├── virtue-presentations/
+    │   ├── index.html            # Accessible guided planner
+    │   ├── styles.css            # Standalone app stylesheet
+    │   └── app.js                # Logic, learning content and save/export
+    └── moral-crossroads/
+        └── index.html            # Two-part activity for Lessons 1.11 and 1.12
 ```
 
 Use the pattern `unit-N/activity-name/` for new assignments. Every activity should have its own `index.html`, a clear link on the hub landing page, and a one-paragraph explanation of outcomes and submissions. Shared components can be introduced in `/shared/` later, if useful. Do not mix private student submissions into this public repository.
@@ -30,6 +33,10 @@ Use the pattern `unit-N/activity-name/` for new assignments. Every activity shou
 **One group presentation**, format chosen by the students, based on a genuine dilemma from teenage life. It must show how an assigned virtue/quality guides moral choice and what the decision reveals about humanity's identity, dignity, and relationship with God. One planning record from the app is assessed separately as **rough work /10**. Total assignment **/50** (Knowledge/Understanding /10; Thinking/Inquiry /10; Application /10; Communication /10; Rough Work /10). No extra individual written reflection is required for this version.
 
 Students use six stages: group focus → accurate Unit 1.8 understanding → a real dilemma → consequences and Catholic meaning → presentation outline and group roles → review/export. They are not asked to duplicate their answers in a second worksheet.
+
+## Lessons 1.11 and 1.12 activity
+
+**The Moral Crossroads** is a two-part guided Catholic moral theology investigation. **Part 1, following Lesson 1.11**, distinguishes objective moral truth from personal opinion, social approval, and legality, and explains God as the ultimate source of goodness. **Part 2, following Lesson 1.12**, has students work in groups with contemporary moral cases, defend different approaches, evaluate ethical reasoning, and use Aquinas, natural law, conscience, virtue, and grace to reach a supported judgment. The Catholic perspective is explicitly taught; students are assessed on understanding and application, not personal religious assent. The self-contained HTML supports local autosave, response exports, backup/restore, and print.
 
 ## Save, portability, and privacy
 
