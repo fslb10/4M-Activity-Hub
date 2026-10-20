@@ -7,6 +7,8 @@ A central, public GitHub Pages repository for **HRE4M1 - Christ and Culture**, G
 When GitHub Pages is enabled for the `main` branch, students open:
 
 - **Course hub:** `https://fslb10.github.io/4M-Activity-Hub/`
+- **Unit 1.5 - Paschal Mystery student investigation:** `https://fslb10.github.io/Interactive-Lessons/paschal-mystery/` (hosted in the separate Interactive-Lessons repository)
+- **Unit 1.5 - Paschal Mystery teacher take-up:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/paschal-mystery-teacher/`
 - **Unit 1.8 - Virtue in Real Life:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/virtue-presentations/`
 - **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
 
@@ -18,6 +20,8 @@ When GitHub Pages is enabled for the `main` branch, students open:
 ├── README.md                     # Repo-wide structure and maintenance
 ├── .nojekyll                     # Serve static HTML/CSS/JS directly
 └── unit-1/
+    ├── paschal-mystery-teacher/
+    │   └── index.html            # Unit 1.5 teacher take-up and model responses
     ├── virtue-presentations/
     │   ├── index.html            # Accessible guided planner
     │   ├── styles.css            # Standalone app stylesheet
@@ -27,6 +31,10 @@ When GitHub Pages is enabled for the `main` branch, students open:
 ```
 
 Use the pattern `unit-N/activity-name/` for new assignments. Every activity should have its own `index.html`, a clear link on the hub landing page, and a one-paragraph explanation of outcomes and submissions. Shared components can be introduced in `/shared/` later, if useful. Do not mix private student submissions into this public repository.
+
+## Unit 1.5 Paschal Mystery resources
+
+The hub places the existing student Psalm 22 investigation directly above its teacher take-up edition. The teacher page is a self-contained presentation and discussion guide with staged answer reveals, model responses, facilitation notes, and a printable guide. Its Student activity link points to the existing page in `fslb10/Interactive-Lessons`. Because this hub is public, the teacher edition and its answers are publicly accessible.
 
 ## Unit 1.8 activity
 
