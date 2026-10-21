@@ -10,6 +10,8 @@ When GitHub Pages is enabled for the `main` branch, students open:
 - **Unit 1.5 - Paschal Mystery student investigation:** `https://fslb10.github.io/Interactive-Lessons/paschal-mystery/` (hosted in the separate Interactive-Lessons repository)
 - **Unit 1.5 - Paschal Mystery teacher take-up:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/paschal-mystery-teacher/`
 - **Unit 1.8 - Virtue in Real Life:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/virtue-presentations/`
+- **Lessons 1.10–1.12 - Humanity in the Age of AI activity:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-and-humanity/`
+- **Lessons 1.10–1.12 - AI and the Human Person assessment:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-and-humanity/assessment.html`
 - **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
 
 ## Repository structure
@@ -26,6 +28,9 @@ When GitHub Pages is enabled for the `main` branch, students open:
     │   ├── index.html            # Accessible guided planner
     │   ├── styles.css            # Standalone app stylesheet
     │   └── app.js                # Logic, learning content and save/export
+    ├── ai-and-humanity/
+    │   ├── index.html            # Lessons 1.10–1.12 guided student activity
+    │   └── assessment.html       # Separate 15-mark application assessment
     └── moral-crossroads/
         └── index.html            # Two-part activity for Lessons 1.11 and 1.12
 ```
@@ -41,6 +46,10 @@ The hub places the existing student Psalm 22 investigation directly above its te
 **One group presentation**, format chosen by the students, based on a genuine dilemma from teenage life. It must show how an assigned virtue/quality guides moral choice and what the decision reveals about humanity's identity, dignity, and relationship with God. One planning record from the app is assessed separately as **rough work /10**. Total assignment **/50** (Knowledge/Understanding /10; Thinking/Inquiry /10; Application /10; Communication /10; Rough Work /10). No extra individual written reflection is required for this version.
 
 Students use six stages: group focus → accurate Unit 1.8 understanding → a real dilemma → consequences and Catholic meaning → presentation outline and group roles → review/export. They are not asked to duplicate their answers in a second worksheet.
+
+## Lessons 1.10–1.12 AI and Humanity activity and assessment
+
+**Humanity in the Age of AI** is a six-step guided student inquiry connecting faith and reason, human dignity, conscience, and AI. Students save responses locally and can download a text record or print their work. The separate **AI and the Human Person** assessment has five independent application questions worth 15 marks. Its hub card says to complete it after the class debrief; both pages are publicly accessible. The assessment also saves locally and offers download and print options. Neither page submits answers automatically. The teacher guide and answer key from the local review package are not published here.
 
 ## Lessons 1.11 and 1.12 activity
 
