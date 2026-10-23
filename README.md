@@ -12,6 +12,7 @@ When GitHub Pages is enabled for the `main` branch, students open:
 - **Unit 1.8 - Virtue in Real Life:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/virtue-presentations/`
 - **Lessons 1.10–1.12 - Humanity in the Age of AI activity:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-and-humanity/`
 - **Lessons 1.10–1.12 - AI and the Human Person assessment:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-and-humanity/assessment.html`
+- **Lesson 1.11 - Who Decides What Is Good?:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/objective-moral-truth/`
 - **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
 
 ## Repository structure
@@ -31,6 +32,8 @@ When GitHub Pages is enabled for the `main` branch, students open:
     ├── ai-and-humanity/
     │   ├── index.html            # Lessons 1.10–1.12 guided student activity
     │   └── assessment.html       # Separate 15-mark application assessment
+    ├── objective-moral-truth/
+    │   └── index.html            # Standalone Unit 1.11 student inquiry
     └── moral-crossroads/
         └── index.html            # Two-part activity for Lessons 1.11 and 1.12
 ```
@@ -50,6 +53,10 @@ Students use six stages: group focus → accurate Unit 1.8 understanding → a r
 ## Lessons 1.10–1.12 AI and Humanity activity and assessment
 
 **Humanity in the Age of AI** is a six-step guided student inquiry connecting faith and reason, human dignity, conscience, and AI. Students save responses locally and can download a text record or print their work. The separate **AI and the Human Person** assessment has five independent application questions worth 15 marks. Its hub card says to complete it after the class debrief; both pages are publicly accessible. The assessment also saves locally and offers download and print options. Neither page submits answers automatically. The teacher guide and answer key from the local review package are not published here.
+
+## Lesson 1.11 objective moral truth activity
+
+**Who Decides What Is Good?** is a standalone student-led inquiry into objective moral truth. It uses a Canadian MAiD case study to ask students to distinguish claims, apply Catholic moral reasoning, and explain a supported position. The self-contained HTML saves work locally and lets students download or print their responses. It appears in the hub before the existing two-part Moral Crossroads activity.
 
 ## Lessons 1.11 and 1.12 activity
 
