@@ -13,6 +13,7 @@ When GitHub Pages is enabled for the `main` branch, students open:
 - **Lessons 1.10–1.12 - Humanity in the Age of AI activity:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-and-humanity/`
 - **Lessons 1.10–1.12 - AI and the Human Person assessment:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-and-humanity/assessment.html`
 - **Lesson 1.11 - Who Decides What Is Good?:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/objective-moral-truth/`
+- **Lesson 1.12 - The Human in the Loop:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-conscience-ethics-lab/`
 - **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
 
 ## Repository structure
@@ -34,6 +35,8 @@ When GitHub Pages is enabled for the `main` branch, students open:
     │   └── assessment.html       # Separate 15-mark application assessment
     ├── objective-moral-truth/
     │   └── index.html            # Standalone Unit 1.11 student inquiry
+    ├── ai-conscience-ethics-lab/
+    │   └── index.html            # Standalone Unit 1.12 student lab
     └── moral-crossroads/
         └── index.html            # Two-part activity for Lessons 1.11 and 1.12
 ```
@@ -57,6 +60,10 @@ Students use six stages: group focus → accurate Unit 1.8 understanding → a r
 ## Lesson 1.11 objective moral truth activity
 
 **Who Decides What Is Good?** is a standalone student-led inquiry into objective moral truth. It uses a Canadian MAiD case study to ask students to distinguish claims, apply Catholic moral reasoning, and explain a supported position. The self-contained HTML saves work locally and lets students download or print their responses. It appears in the hub before the existing two-part Moral Crossroads activity.
+
+## Lesson 1.12 AI conscience and ethics lab
+
+**The Human in the Loop** is a standalone student-led lab on AI, conscience, morality, ethics, and Catholic moral discernment. Students work through scenarios, record their reasoning, and can save, download, or print responses. The self-contained HTML includes an external source link. It appears after the standalone 1.11 activity and before The Moral Crossroads in the hub.
 
 ## Lessons 1.11 and 1.12 activity
 
