@@ -63,7 +63,7 @@ Students use six stages: group focus → accurate Unit 1.8 understanding → a r
 
 ## Lesson 1.12 AI conscience and ethics lab
 
-**The Human in the Loop** is a standalone student-led lab on AI, conscience, morality, ethics, and Catholic moral discernment. Students work through scenarios, record their reasoning, and can save, download, or print responses. The self-contained HTML includes an external source link. It appears after the standalone 1.11 activity and before The Moral Crossroads in the hub.
+**The Human in the Loop** is a 50–60 minute Unit 1.12 lab on AI, conscience, morality, ethics, and Catholic moral discernment. It provides a short Vatican News overview and the full encyclical, twelve paragraph-referenced evidence choices, an optional student-supplied passage, and two expanded scenarios. Students may discuss ideas with peers, but each writes and submits an individual response file named with their last name and first initial. Draft downloads remain available while work is in progress; the final text download requires all six stages. Responses save in the same browser, and students may also print their work. It appears after the standalone 1.11 activity and before The Moral Crossroads in the hub.
 
 ## Lessons 1.11 and 1.12 activity
 
