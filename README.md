@@ -15,6 +15,7 @@ When GitHub Pages is enabled for the `main` branch, students open:
 - **Lesson 1.11 - Who Decides What Is Good?:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/objective-moral-truth/`
 - **Lesson 1.12 - The Human in the Loop:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-conscience-ethics-lab/`
 - **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
+- **Lesson 2.1 - Exegesis in Practice:** `https://fslb10.github.io/4M-Activity-Hub/unit-2/exegesis-in-practice/`
 
 ## Repository structure
 
@@ -23,7 +24,7 @@ When GitHub Pages is enabled for the `main` branch, students open:
 ├── index.html                    # Central student launch page
 ├── README.md                     # Repo-wide structure and maintenance
 ├── .nojekyll                     # Serve static HTML/CSS/JS directly
-└── unit-1/
+├── unit-1/
     ├── paschal-mystery-teacher/
     │   └── index.html            # Unit 1.5 teacher take-up and model responses
     ├── virtue-presentations/
@@ -39,6 +40,9 @@ When GitHub Pages is enabled for the `main` branch, students open:
     │   └── index.html            # Standalone Unit 1.12 student lab
     └── moral-crossroads/
         └── index.html            # Two-part activity for Lessons 1.11 and 1.12
+└── unit-2/
+    └── exegesis-in-practice/
+        └── index.html            # Self-contained Unit 2.1 activity and PIN-gated teacher guide
 ```
 
 Use the pattern `unit-N/activity-name/` for new assignments. Every activity should have its own `index.html`, a clear link on the hub landing page, and a one-paragraph explanation of outcomes and submissions. Shared components can be introduced in `/shared/` later, if useful. Do not mix private student submissions into this public repository.
@@ -68,6 +72,10 @@ Students use six stages: group focus → accurate Unit 1.8 understanding → a r
 ## Lessons 1.11 and 1.12 activity
 
 **The Moral Crossroads** is a two-part guided Catholic moral theology investigation. **Part 1, following Lesson 1.11**, distinguishes objective moral truth from personal opinion, social approval, and legality, and explains God as the ultimate source of goodness. **Part 2, following Lesson 1.12**, has students work in groups with contemporary moral cases, defend different approaches, evaluate ethical reasoning, and use Aquinas, natural law, conscience, virtue, and grace to reach a supported judgment. The Catholic perspective is explicitly taught; students are assessed on understanding and application, not personal religious assent. The self-contained HTML supports local autosave, response exports, backup/restore, and print.
+
+## Lesson 2.1 exegesis activity
+
+**Exegesis in Practice** is a 25–30 minute partner activity with 18 Scripture passage choices. Students work through reading, background, words and links, message, application, and a short review. The standalone page saves notes in the same browser and offers a backup file, readable text download, and print view. External NRSVCE readings and USCCB context notes open in new tabs. A teacher guide inside the activity asks for a PIN and locks again on reload; because the site is public and static, this is a classroom access prompt rather than secure authentication.
 
 ## Save, portability, and privacy
 
