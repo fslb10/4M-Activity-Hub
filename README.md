@@ -16,6 +16,7 @@ When GitHub Pages is enabled for the `main` branch, students open:
 - **Lesson 1.12 - The Human in the Loop:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/ai-conscience-ethics-lab/`
 - **Lessons 1.11 and 1.12 - The Moral Crossroads:** `https://fslb10.github.io/4M-Activity-Hub/unit-1/moral-crossroads/`
 - **Lesson 2.1 - Exegesis in Practice:** `https://fslb10.github.io/4M-Activity-Hub/unit-2/exegesis-in-practice/`
+- **Lesson 2.2 - Four Senses in Practice:** `https://fslb10.github.io/4M-Activity-Hub/unit-2/four-senses-in-practice/`
 
 ## Repository structure
 
@@ -41,8 +42,10 @@ When GitHub Pages is enabled for the `main` branch, students open:
     └── moral-crossroads/
         └── index.html            # Two-part activity for Lessons 1.11 and 1.12
 └── unit-2/
-    └── exegesis-in-practice/
-        └── index.html            # Self-contained Unit 2.1 activity and PIN-gated teacher guide
+    ├── exegesis-in-practice/
+    │   └── index.html            # Self-contained Unit 2.1 activity and PIN-gated teacher guide
+    └── four-senses-in-practice/
+        └── index.html            # Self-contained 15-minute Unit 2.2 practice and teacher guide
 ```
 
 Use the pattern `unit-N/activity-name/` for new assignments. Every activity should have its own `index.html`, a clear link on the hub landing page, and a one-paragraph explanation of outcomes and submissions. Shared components can be introduced in `/shared/` later, if useful. Do not mix private student submissions into this public repository.
@@ -76,6 +79,10 @@ Students use six stages: group focus → accurate Unit 1.8 understanding → a r
 ## Lesson 2.1 exegesis activity
 
 **Exegesis in Practice** is a 25–30 minute partner activity with 18 Scripture passage choices. Students work through reading, background, words and links, message, application, and a short review. The standalone page saves notes in the same browser and offers a backup file, readable text download, and print view. External NRSVCE readings and USCCB context notes open in new tabs. A teacher guide inside the activity asks for a PIN and locks again on reload; because the site is public and static, this is a classroom access prompt rather than secure authentication.
+
+## Lesson 2.2 four senses activity
+
+**Four Senses in Practice** is a 15-minute formative activity based on Lesson 2.2 and the three-passage Four Senses assignment. It expands the choice set to ten different passages, none of which duplicates the primary passages in Unit 2.1 Exegesis in Practice. A student or pair reads one assigned passage and writes short literal, allegorical, moral, and anagogical responses, then uses a four-point self-check. The page offers NRSVCE reading links, USCCB context notes, browser autosave, a portable JSON backup, readable text download, and a print view. No answer is submitted or graded automatically. The teacher guide uses the same classroom PIN prompt as Unit 2.1 and locks again on reload; the public static site does not provide secure authentication.
 
 ## Save, portability, and privacy
 
