@@ -26,21 +26,21 @@ When GitHub Pages is enabled for the `main` branch, students open:
 ├── README.md                     # Repo-wide structure and maintenance
 ├── .nojekyll                     # Serve static HTML/CSS/JS directly
 ├── unit-1/
-    ├── paschal-mystery-teacher/
-    │   └── index.html            # Unit 1.5 teacher take-up and model responses
-    ├── virtue-presentations/
-    │   ├── index.html            # Accessible guided planner
-    │   ├── styles.css            # Standalone app stylesheet
-    │   └── app.js                # Logic, learning content and save/export
-    ├── ai-and-humanity/
-    │   ├── index.html            # Lessons 1.10–1.12 guided student activity
-    │   └── assessment.html       # Separate 15-mark application assessment
-    ├── objective-moral-truth/
-    │   └── index.html            # Standalone Unit 1.11 student inquiry
-    ├── ai-conscience-ethics-lab/
-    │   └── index.html            # Standalone Unit 1.12 student lab
-    └── moral-crossroads/
-        └── index.html            # Two-part activity for Lessons 1.11 and 1.12
+│   ├── paschal-mystery-teacher/
+│   │   └── index.html            # Unit 1.5 teacher take-up and model responses
+│   ├── virtue-presentations/
+│   │   ├── index.html            # Accessible guided planner
+│   │   ├── styles.css            # Standalone app stylesheet
+│   │   └── app.js                # Logic, learning content and save/export
+│   ├── ai-and-humanity/
+│   │   ├── index.html            # Lessons 1.10–1.12 guided student activity
+│   │   └── assessment.html       # Separate 15-mark application assessment
+│   ├── objective-moral-truth/
+│   │   └── index.html            # Standalone Unit 1.11 student inquiry
+│   ├── ai-conscience-ethics-lab/
+│   │   └── index.html            # Standalone Unit 1.12 student lab
+│   └── moral-crossroads/
+│       └── index.html            # Two-part activity for Lessons 1.11 and 1.12
 └── unit-2/
     ├── exegesis-in-practice/
     │   └── index.html            # Self-contained Unit 2.1 activity and PIN-gated teacher guide
