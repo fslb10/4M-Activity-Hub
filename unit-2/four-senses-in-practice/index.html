@@ -11,6 +11,7 @@
 @media(max-width:850px){.workgrid{grid-template-columns:1fr}.desk{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.route{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.topbar{align-items:flex-start;flex-direction:column}.topbar nav button{padding:.48rem .65rem}.hero{grid-template-columns:1fr}.heroart{display:none}main{padding:1.35rem 1rem 2.5rem}.passagegrid,.guidegrid,.desk{grid-template-columns:1fr}.route{grid-template-columns:repeat(2,1fr)}.workspacehead{display:block}.workspacehead .toolbar{justify-content:flex-start;margin:.7rem 0}.formrow{grid-template-columns:1fr}.sectionhead{display:block}}
 @media print{@page{size:letter;margin:.62in}.masthead,main,.sitefoot,#toast{display:none!important}body{background:white;color:#111}#printSheet{display:block!important;font:11pt/1.4 Georgia,serif}#printSheet h1{font-size:20pt}#printSheet h2{font-size:13pt;margin:1.15rem 0 .3rem;break-after:avoid}#printSheet p{margin:.2rem 0 .8rem;white-space:pre-wrap}#printSheet .meta{font:9pt/1.4 Arial,sans-serif;color:#444;border-bottom:1px solid #aaa;padding-bottom:.6rem}#printSheet .answer{min-height:1.5rem;break-inside:avoid}#printSheet .blank{color:#777;font-style:italic}}
+.sense-guidance{margin:.9rem 0 1.05rem;padding:.7rem .9rem;border-left:3px solid var(--teal);border-radius:0 9px 9px 0;background:var(--sage)}.sense-guidance h3{margin:0 0 .35rem;font-size:.94rem}.sense-guidance p,.sense-guidance ol{margin:.25rem 0;font-size:.92rem}.sense-guidance ol{padding-left:1.3rem}.sense-guidance li+li{margin-top:.32rem}
 </style>
 </head>
 <body>
@@ -35,11 +36,168 @@
 ];
 
 const APP_ID='hre4m-u2-2-four-senses', STORAGE_KEY=APP_ID+'-v1';
+const PASSAGE_GUIDANCE = {
+  jacob: {
+    allegorical: {
+      reference: 'John 1:51',
+      find: 'In Genesis 28:12, mark what the angels do. Find the same action in John.',
+      connect: 'Identify where the angels are moving in Genesis and who is at the centre of the image in John. What might that change suggest about Jesus?'
+    },
+    moral: {
+      find: 'Compare what God says in verse 15 with what Jacob notices when he wakes in verse 16.',
+      connect: 'Think of a situation where someone is far from home or in unfamiliar surroundings. What could you do in that situation because of the detail you chose?'
+    },
+    anagogical: {
+      find: 'List two things God promises in verse 15. Pick one that could help you picture a hope beyond the end of Jacob’s trip.',
+      connect: 'If that part of the promise were fulfilled completely, what would life with God be like? Explain how the verse led you there.'
+    }
+  },
+  manna: {
+    allegorical: {
+      reference: 'John 6:32–35',
+      find: 'Mark who provides food in Exodus 16:12–15. Then look for the giver and the gift in John.',
+      connect: 'Where does Jesus place himself in the comparison? Explain what the wilderness story helps you understand about him.'
+    },
+    moral: {
+      find: 'Read Exodus 16:16–18. Look at what each person is told to gather and what happens when it is measured.',
+      connect: 'Picture a group with a limited supply of something it needs. Choose one way to decide how much each person gets. Explain which detail shaped your choice.'
+    },
+    anagogical: {
+      reference: 'John 6:49–51',
+      find: 'Compare what happened to the people who ate manna with what Jesus promises in John. Mark the words that tell you how long each gift sustains life.',
+      connect: 'What kind of life with God does that comparison open up? Describe it in your own words.'
+    }
+  },
+  serpent: {
+    allegorical: {
+      reference: 'John 3:14–15',
+      find: 'Read Numbers 21:8–9 and John together. Identify what or who is lifted up in each passage.',
+      connect: 'Compare how people respond and what follows. Use that pattern to explain why Jesus brings up Moses’ story.'
+    },
+    moral: {
+      find: 'In Numbers 21:7, identify what the people say and what they ask Moses to do.',
+      connect: 'Imagine someone realizes they have caused harm in a group. Choose one first step they could take and connect it to the sequence you noticed.'
+    },
+    anagogical: {
+      reference: 'John 3:14–15',
+      find: 'Read the ending of Numbers 21:9 and then the end of John 3:15. Notice the words each uses for the life being offered.',
+      connect: 'What hope does John describe beyond surviving a danger? Explain how the comparison helps you see the difference.'
+    }
+  },
+  ruth: {
+    allegorical: {
+      reference: 'Matthew 1:1–5',
+      find: 'Notice what Ruth commits herself to in Ruth 1:16. In Matthew, read whose family line is being traced and find Ruth’s name.',
+      connect: 'Ruth comes from Moab. Why might her presence in this family line matter for the story of Jesus and God’s saving plan?'
+    },
+    moral: {
+      find: 'Choose one part of Ruth’s commitment in verses 16–17. What does it ask of her in that moment?',
+      connect: 'Think of a person facing a difficult change. Describe one action that would put the same kind of commitment into practice and explain how.'
+    },
+    anagogical: {
+      reference: 'Revelation 7:9–10',
+      find: 'Find what Ruth says about belonging in Ruth 1:16. Then look at where the worshippers in Revelation come from.',
+      connect: 'How could the picture in Revelation help you imagine belonging with God on a larger scale? Explain the link to Ruth’s words.'
+    }
+  },
+  branch: {
+    allegorical: {
+      reference: 'Romans 15:12',
+      find: 'Find Jesse’s name in both readings. In Isaiah 11:2–4, pick one quality or action of the promised ruler.',
+      connect: 'Notice who looks to that ruler in Romans. What does the quality you chose help Christians understand about Christ’s kingship?'
+    },
+    moral: {
+      find: 'In Isaiah 11:3–4, compare how the ruler judges with what someone could decide by appearances alone.',
+      connect: 'Think of a decision at school where someone could be overlooked. What would you do before deciding, based on the ruler’s example?'
+    },
+    anagogical: {
+      find: 'Choose one image from Isaiah 11:6–9. Describe what is different about the world in that image.',
+      connect: 'What might that picture help us hope for when God’s work in creation is complete? Use the image to support your idea.'
+    }
+  },
+  covenant: {
+    allegorical: {
+      reference: 'Luke 22:20',
+      find: 'Read Jeremiah 31:31–34 and identify who receives the promise. Then find the phrase Jesus repeats over the cup in Luke.',
+      connect: 'What does Jesus connect that phrase to at the meal? Explain what the link adds to a Christian reading of the promise.'
+    },
+    moral: {
+      find: 'Find where God says the law will be written in Jeremiah 31:33. Think about how that image might shape a decision.',
+      connect: 'Choose a moment when nobody is checking what you do. What choice could show that you have taken God’s teaching to heart?'
+    },
+    anagogical: {
+      find: 'In Jeremiah 31:34, look at what everyone will know and what God says about their sins.',
+      connect: 'Choose one of those promises. What would the completed relationship between God and the people be like if that promise were fully realized?'
+    }
+  },
+  bones: {
+    allegorical: {
+      reference: '1 Corinthians 15:20–22',
+      find: 'Use Ezekiel 37:11–14 to identify who the bones represent. Then find what Paul says has happened to Christ.',
+      connect: 'Trace the movement from the starting situation to what God does in each reading. What makes the vision a fitting image to read alongside Christ’s story?'
+    },
+    moral: {
+      find: 'Compare what the people say about themselves in Ezekiel 37:11 with what God says he will do in verses 12–14.',
+      connect: 'Think of a person who feels defeated after a setback. What is one realistic thing you could do alongside them that follows from the change you noticed?'
+    },
+    anagogical: {
+      reference: '1 Corinthians 15:20–23',
+      find: 'In Paul’s description, mark what happens first and who is mentioned next. Keep Ezekiel’s image of life returning in view.',
+      connect: 'What future does Paul invite people who belong to Christ to hope for? Explain how the image from Ezekiel helps you picture it.'
+    }
+  },
+  jonah: {
+    allegorical: {
+      reference: 'Matthew 12:40',
+      find: 'Compare Jonah 1:17 with Jesus’ words in Matthew. Identify the time detail that appears in both.',
+      connect: 'What experience of the Son of Man is Jesus asking his hearers to connect with Jonah’s experience? Explain the parallel in your own words.'
+    },
+    moral: {
+      find: 'In Jonah 2:1–3, notice what Jonah does while he is still in distress. Find a phrase from his prayer that stands out to you.',
+      connect: 'Imagine an ordinary situation where you feel stuck. What first step could you take that reflects the part of Jonah’s prayer you chose?'
+    },
+    anagogical: {
+      find: 'Trace where Jonah is at the beginning and where he ends up. Recall the connection you made to Jesus’ story in the allegorical step.',
+      connect: 'Use that connection to consider what hope people have in the face of death. How does that hope reach beyond Jonah’s return to land?'
+    }
+  },
+  cross: {
+    allegorical: {
+      find: 'Compare what the two men ask of Jesus in Luke 23:39 and 42. Then look at how Jesus replies in verse 43.',
+      connect: 'What does Jesus’ reply reveal about the kind of saving work he can do, even while he is on the cross?'
+    },
+    moral: {
+      find: 'Look at what the second man admits in verses 40–42 and how Jesus responds in verse 43.',
+      connect: 'Choose either the man’s honesty or Jesus’ response as your starting point. What could you say or do in a situation where someone has caused harm?'
+    },
+    anagogical: {
+      reference: 'Revelation 21:3–4',
+      find: 'In Luke 23:43, identify who Jesus says the man will be with. In Revelation, look for who dwells with the people and what changes for them.',
+      connect: 'Use one detail from each reading to describe the future hope they help you picture.'
+    }
+  },
+  cana: {
+    allegorical: {
+      find: 'Follow what happens to the water in John 2:7–10. Then find what John says the sign reveals in verse 11.',
+      connect: 'Choose a detail about what Jesus gives or how people respond. Explain what that detail helps you understand about Jesus and the life he offers.'
+    },
+    moral: {
+      find: 'Look at what Mary notices in John 2:3–5 and how the servants respond in verses 7–8. Choose one of their actions.',
+      connect: 'Picture an everyday situation where something has gone wrong. What could you do that follows the example you chose?'
+    },
+    anagogical: {
+      reference: 'Revelation 19:7–9',
+      find: 'Name the kind of celebration in John 2. In Revelation, find whose celebration it is and notice what the guests are invited to do.',
+      connect: 'What future with God might the celebration help us picture? Explain why a wedding feast is a fitting image for the hope you describe.'
+    }
+  }
+};
+
 const SENSES=[
- {key:'literal',name:'Literal',time:'3 min',tag:'Start with the text',question:'What does this passage communicate in its own setting and genre?',why:'Summarize it in one or two sentences. Include one detail and a verse number. If it is a poem or vision, say so; literal does not mean treating imagery as a photograph.',placeholder:'In verse ..., the writer shows ...'},
- {key:'allegorical',name:'Allegorical',time:'3 min',tag:'Read in light of Christ',question:'How can this passage connect to Christ, the Church, or God’s saving plan?',why:'Name one careful connection. For a Gospel scene, explain what it reveals about Christ’s saving work. Point to a detail in this passage or the optional linked reading.',placeholder:'This may point to Christ because ...'},
- {key:'moral',name:'Moral',time:'3 min',tag:'Choose a response',question:'What concrete way of living does this passage invite?',why:'Give one realistic action for a person or community today. Explain how the action grows from the passage, rather than writing only “be good.”',placeholder:'A person could ... because verse ...'},
- {key:'anagogical',name:'Anagogical',time:'2 min',tag:'Look toward our destiny',question:'What hope about life with God or the final fulfilment of God’s plan does this suggest?',why:'Name an eternal hope. Keep it distinct from the action you wrote in the moral sense. A careful possibility is better than a claim the text does not support.',placeholder:'This can direct hope toward ...'}
+ {key:'literal',name:'Literal',time:'3 min',tag:'Start with the text',question:'What does this passage communicate in its own setting and genre?',why:'Use one detail and its verse number to explain the passage’s meaning in your own words.',placeholder:'The passage shows ___. I see this in verse ___ when ___.'},
+ {key:'allegorical',name:'Allegorical',time:'3 min',tag:'Read in light of Christ',question:'How can this passage connect to Christ, the Church, or God’s saving plan?',why:'Explain how a detail in the passage supports your connection. If you use two readings, name a detail from each.',placeholder:'I noticed ___ in verse ___. This connects to Christ or God’s saving work because ___.'},
+ {key:'moral',name:'Moral',time:'3 min',tag:'Choose a response',question:'What concrete way of living does this passage invite?',why:'Name one action a person could take today and explain which part of the passage led you to it.',placeholder:'In this situation, I could ___. That follows from verse ___ because ___.'},
+ {key:'anagogical',name:'Anagogical',time:'2 min',tag:'Look toward our destiny',question:'What hope about life with God or the final fulfilment of God’s plan does this suggest?',why:'Describe a lasting hope with God. Show which image, promise, or event supports your reading.',placeholder:'The detail ___ helps me picture ___ when God’s plan is fulfilled.'}
 ];
 const CHECKS=[
  ['literal','My literal answer describes the passage’s own meaning and names a detail.'],
@@ -72,7 +230,40 @@ function select(id){if(!passage(id))return;state.selected=id;state.view='work';w
 function route(){return`<div class="route" aria-label="15-minute route"><span><b>2 min</b>Choose and read</span><span><b>3 min</b>Literal</span><span><b>3 min</b>Allegorical</span><span><b>3 min</b>Moral</span><span><b>2 min</b>Anagogical</span><span><b>2 min</b>Review and save</span></div>`;}
 const art=`<svg class="heroart" viewBox="0 0 220 190" fill="none" aria-hidden="true"><circle cx="108" cy="93" r="83" fill="#f3e5e9"/><path d="M41 47c28-10 47-4 67 10 20-14 40-20 70-10v100c-27-8-49-3-70 11-21-14-43-19-67-11V47Z" fill="#fffefa" stroke="#722d45" stroke-width="3"/><path d="M108 57v100M57 72c11-3 26 0 39 7m-39 14c12-2 27 2 39 8m-39 14c12-2 25 1 39 8m24-44c13-7 28-9 42-7m-42 29c13-6 28-8 42-6m-42 28c13-6 28-8 42-6" stroke="#ba9b8c" stroke-width="2"/><circle cx="166" cy="129" r="23" fill="#722d45"/><path d="M166 115v28m-14-14h28" stroke="white" stroke-width="2.5"/></svg>`;
 function chooseView(){return`<section class="hero"><div><p class="eyebrow">After Lesson 2.2 · Guided practice</p><h1>Four ways to read.<br>One passage at a time.</h1><p class="lead">Choose <strong>one</strong> assigned passage. Read it, then use the literal, allegorical, moral, and anagogical senses to explain what you find.</p><div class="pillrow"><span class="pill">15 minutes</span><span class="pill">10 fresh passages</span><span class="pill">One or two sentences per sense</span></div></div>${art}</section>${route()}<div class="callout"><p><strong>How to work:</strong> Your teacher may assign a passage or let you choose. Work alone or with a partner as directed. You will write four short responses for <em>one</em> passage, then review and download if asked. This practice is not automatically submitted or graded.</p></div><div class="sectionhead"><div><p class="eyebrow">Choose a passage</p><h2>Ten places to practise</h2></div><button data-action="import" class="small">Open a saved backup</button></div><div class="passagegrid">${PASSAGES.map((p,i)=>`<article class="panel passagecard"><span class="eyebrow">Option ${i+1} · ${esc(p.genre)}</span><h3>${esc(p.title)}</h3><span class="ref">${esc(p.ref)}</span><p>${esc(p.scene)}</p>${state.works[p.id]&&SENSES.some(s=>(state.works[p.id].answers?.[s.key]||'').trim())?'<span class="saved">Saved notes</span>':''}<button class="primary small" data-select="${p.id}">${state.selected===p.id?'Continue this passage':'Choose this passage'}</button></article>`).join('')}</div>`;}
-function senseCard(s,w){const answer=w.answers[s.key]||'';return`<section class="panel sense" id="sense-${s.key}"><header><p class="eyebrow">${esc(s.tag)}</p><span class="time">${esc(s.time)}</span></header><h2>${esc(s.name)} sense</h2><p class="question">${esc(s.question)}</p><p class="why">${esc(s.why)}</p><label for="answer-${s.key}">Your ${esc(s.name.toLowerCase())} response</label><textarea id="answer-${s.key}" data-answer="${s.key}" rows="3" maxlength="6000" placeholder="${esc(s.placeholder)}">${esc(answer)}</textarea><p class="wordline"><span data-word="${s.key}">${answer.trim()?answer.trim().split(/\s+/).length:0}</span> words · brief notes are enough</p></section>`;}
+function senseGuidance(p, key) {
+  if (key === 'literal') {
+    return `<div class="sense-guidance">
+      <h3>Read and mark a detail</h3>
+      <p>${link(reading(p.ref), p.ref + ' · NRSV Catholic Edition')}</p>
+      <p>${esc(p.notice)} Pick one detail that helps explain the scene, poem, or vision as a whole.</p>
+    </div>`;
+  }
+  const guidance = PASSAGE_GUIDANCE[p.id][key];
+  return `<div class="sense-guidance">
+    <h3>Work through the connection</h3>
+    ${guidance.reference ? `<p>${link(reading(guidance.reference), 'Read ' + guidance.reference)}</p>` : ''}
+    <ol>
+      <li>${esc(guidance.find)}</li>
+      <li>${esc(guidance.connect)}</li>
+    </ol>
+  </div>`;
+}
+
+function senseCard(s, w) {
+  const p = passage(state.selected);
+  const answer = w.answers[s.key] || '';
+  const wordCount = answer.trim() ? answer.trim().split(/\s+/).length : 0;
+  return `<section class="panel sense" id="sense-${s.key}">
+    <header><p class="eyebrow">${esc(s.tag)}</p><span class="time">${esc(s.time)}</span></header>
+    <h2>${esc(s.name)} sense</h2>
+    <p class="question" id="question-${s.key}">${esc(s.question)}</p>
+    ${senseGuidance(p, s.key)}
+    <p class="why">${esc(s.why)}</p>
+    <label for="answer-${s.key}">Your ${esc(s.name.toLowerCase())} response</label>
+    <textarea id="answer-${s.key}" data-answer="${s.key}" aria-describedby="question-${s.key}" rows="3" maxlength="6000" placeholder="${esc(s.placeholder)}">${esc(answer)}</textarea>
+    <p class="wordline"><span data-word="${s.key}">${wordCount}</span> words · brief notes are enough</p>
+  </section>`;
+}
 function workView(){const p=passage(state.selected);if(!p)return chooseView();const w=work(p);return`<div class="workspacehead"><div><p class="eyebrow">Your passage · ${esc(p.genre)}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.ref)} · Work through all four senses in order.</p></div><div class="toolbar"><button data-nav="choose" class="small">Switch passage</button><button data-action="backup" class="small">Save a backup</button></div></div><div class="workgrid"><div><section class="panel" style="margin-bottom:.9rem"><div class="formrow"><div><label for="names">Name(s) for your response file</label><input id="names" type="text" maxlength="150" value="${esc(state.names)}" placeholder="Enter your name, or both names if working with a partner"></div><span class="status" id="saveStatus"></span></div><div class="progress" role="progressbar" aria-label="Responses recorded" aria-valuemin="0" aria-valuemax="4" aria-valuenow="${count(w)}"><span id="progressFill" style="width:${count(w)*25}%"></span></div><p class="tiny muted" id="progressText" style="margin:0">${count(w)} of 4 responses recorded</p></section><div class="sense-list">${SENSES.map(s=>senseCard(s,w)).join('')}</div><section class="panel review"><p class="eyebrow">Final two minutes</p><h2>Check your four answers</h2><p class="tiny muted">Tick these when you have checked your work. You can download a draft at any time.</p><div class="checklist">${CHECKS.map(([key,label])=>`<label><input type="checkbox" data-check="${key}" ${w.checks[key]?'checked':''}><span>${esc(label)}</span></label>`).join('')}</div><div class="toolbar"><button class="primary" data-action="download">Download my responses</button><button data-action="print">Print / Save as PDF</button><button data-action="backup">Save a backup</button></div><p class="tiny muted" style="margin:.7rem 0 0">The text and print copies are for reading or submission; keep the .json backup if you need to edit on another device.</p></section></div><aside class="desk" aria-label="Reading and help"><section class="panel"><p class="eyebrow">Read first · 2 min</p><h3>${esc(p.title)}</h3><p class="ref">${esc(p.ref)}</p><p>${esc(p.scene)}</p><p><strong>Notice:</strong> ${esc(p.notice)}</p><div class="toolbar">${link(reading(p.ref),'Read NRSV Catholic Edition')}${link(notes(p),'USCCB context notes')}</div><p class="tiny muted" style="margin:.7rem 0 0">Use your class NRSV if a link is unavailable. USCCB notes use a different translation.</p></section><section class="panel"><h3>Need a careful connection?</h3><p>Start with this passage’s own meaning. Then, if helpful, compare ${link(reading(p.bridge),p.bridge)}. A cross-reference is a clue to test, not an answer to copy.</p><button data-nav="guide" class="small">Review the four senses</button></section><section class="panel"><h3>Your save</h3><p class="status" id="sideSave"></p><p class="tiny muted">Answers save in this browser. Use Save a backup before changing devices or clearing browser data.</p><button data-action="import" class="small">Open a backup</button></section></aside></div>`;}
 function guideView(){return`<p class="eyebrow">A short reminder</p><h1>The four senses work together.</h1><p class="lead">The literal sense asks what the human author meant. The three spiritual senses build from that foundation. A thoughtful connection should fit the passage and the whole Christian story.</p><div class="guidegrid"><section class="panel"><h2>1. Literal</h2><p><span class="key">Ask:</span> What does the text say and mean in its own genre and setting?</p><p>Notice who speaks, what happens, and what kind of writing this is. A vision can use images without being a photograph.</p></section><section class="panel"><h2>2. Allegorical</h2><p><span class="key">Ask:</span> How can this point to Christ, the Church, or salvation?</p><p>Use a real detail and, where helpful, a related passage. Do not invent a secret meaning for every object.</p></section><section class="panel"><h2>3. Moral</h2><p><span class="key">Ask:</span> How should we live in response?</p><p>Give one specific action that follows from the passage. This is about life today.</p></section><section class="panel"><h2>4. Anagogical</h2><p><span class="key">Ask:</span> What final hope with God does it suggest?</p><p>Think about lasting communion with God, resurrection, or the fulfilment of God’s plan. This is about our ultimate destiny.</p></section><section class="panel wide"><h2>Sources and saving</h2><p>The method follows ${link('https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iii_the_holy_spirit,_interpreter_of_scripture.html','Catechism of the Catholic Church 109–119')}, especially 115–118. Passage links request the NRSV Catholic Edition; USCCB notes give context in the NABRE translation. Passage summaries and teacher prompts are paraphrases.</p><p>Your work stays in this browser. A backup .json file can restore editing on another device. A .txt response or printout cannot restore editing. No account, upload, or automatic submission is built into this activity.</p><div class="toolbar"><button class="primary" data-nav="${state.selected?'work':'choose'}">${state.selected?'Return to my passage':'Choose a passage'}</button><button data-action="backup">Save a backup</button><button data-action="import">Open a backup</button><button data-action="clear" class="quiet">Clear saved work</button></div></section></div>`;}
 function teacherLock(){return`<section class="panel" style="max-width:560px;margin:2rem auto"><p class="eyebrow">Teacher reference</p><h1>Teacher guide</h1><p>Enter the teacher PIN to view facilitation notes and possible readings.</p><form id="teacherUnlockForm"><label for="teacherPin" style="font-weight:700">Teacher PIN</label><input id="teacherPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" required aria-describedby="teacherPinError" style="margin:.4rem 0"><p id="teacherPinError" role="alert" style="color:#a12d42"></p><div class="toolbar"><button class="primary" type="submit">Unlock guide</button><button data-nav="choose" type="button">Return to passages</button></div></form></section>`;}
