@@ -18,6 +18,9 @@ header .eyebrow{color:#bfe4d6} h1{margin:.3rem 0 .5rem;font:700 clamp(2.4rem,7vw
 header p:last-child{margin:0;color:#e5f4ef;max-width:46rem}
 main,footer{width:min(1160px,calc(100% - 2rem));margin:1.4rem auto}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:clamp(1rem,3vw,1.6rem);min-width:0}
+.instructions{margin-bottom:1rem}
+.steps{padding-left:1.4rem;margin:.75rem 0}
+.steps li+li{margin-top:.45rem}
 .setup{display:grid;grid-template-columns:1.15fr .55fr 1.5fr;gap:1rem}
 label{display:block;font-weight:710}
 input,select,textarea{border:1px solid #8fa8a4;background:white;color:var(--ink);width:100%;padding:.55rem .72rem;border-radius:7px;margin-top:.3rem}
@@ -96,9 +99,17 @@ footer{font-size:.85rem;color:var(--muted);padding-bottom:1.1rem}
 <header>
 <p class="eyebrow">HRE4M1 · Unit 2 · ICA 2</p>
 <h1>Who Is Jesus?</h1>
-<p><strong>Day 1 · Interpret your assigned passage.</strong> Read the text, establish its meaning in context, then develop three spiritual readings supported by evidence.</p>
+<p><strong>Day 1 · Exegesis and the four senses of biblical literacy.</strong> Complete an organizer for your assigned Scripture passage. You’ll use that organizer to answer two questions in class on Day 2.</p>
 </header>
 <main>
+<section class="card instructions" aria-labelledby="instructions-title">
+<h2 id="instructions-title">What you’ll do over two days</h2>
+<ol class="steps">
+<li><strong>Complete the exegesis process.</strong> Read your assigned passage and the background notes. Identify the type of writing and a relevant detail about the original setting, speaker, or audience. Examine a verse or phrase and explain what it helps you understand about the passage’s meaning in context. This is your <strong>literal sense</strong> response.</li>
+<li><strong>Complete all four senses.</strong> Build on your literal reading in the three remaining boxes. Use the <strong>allegorical sense</strong> to connect the passage to Christ and his mission, the <strong>moral sense</strong> to explain how it can guide a choice, and the <strong>anagogical sense</strong> to explain what it points to about ultimate Christian hope. Cite and explain evidence in each response.</li>
+<li><strong>Submit your Day 1 organizer.</strong> Download your completed PDF and upload it to your teacher’s Dropbox assignment. On <strong>Day 2</strong>, use the returned organizer to build an interpretation from your evidence and apply a reading of the passage to a realistic situation today.</li>
+</ol>
+</section>
 <section class="card" aria-label="Student and passage details">
 <div class="setup">
 <label>Student name<input id="student" maxlength="80" autocomplete="off"></label>
@@ -137,7 +148,7 @@ footer{font-size:.85rem;color:var(--muted);padding-bottom:1.1rem}
 <section class="card">
 <p class="kicker">01 · Lesson 2.1 + 2.2</p>
 <div class="section-head"><h3><label for="literal">Exegesis and literal sense</label></h3><span class="score" id="literal-marks"></span></div>
-<p class="prompt" id="literal-prompt">In 4–5 sentences, explain what the passage communicates in its original setting. Identify the type of writing and one relevant detail about the setting, speaker, or audience. Cite a verse or phrase and explain how it supports your reading.</p>
+<p class="prompt" id="literal-prompt">Write 4–5 sentences. Identify the type of writing and one relevant detail about the original setting, speaker, or audience. Cite a verse or phrase, explain what it means in that context, and show how it supports your understanding of the passage as a whole.</p>
 <ul class="marking-criteria" id="literal-criteria"></ul>
 <div class="guide" id="literal-guide"></div>
 <textarea id="literal" maxlength="1300" aria-describedby="literal-prompt literal-cue"></textarea>
@@ -193,7 +204,7 @@ footer{font-size:.85rem;color:var(--muted);padding-bottom:1.1rem}
 <tbody id="day1-marks"></tbody>
 </table>
 <p class="hint" id="communication-criterion"></p>
-<p>Check your name, period, and all four responses. Download your PDF and upload it to your teacher’s Dropbox assignment. Your teacher will return a printed copy for Day 2.</p>
+<p>Check that your exegesis explains the passage in context and that all four senses are supported by verse references. Confirm your name and period, download your PDF, and upload it to your teacher’s Dropbox assignment. Your teacher will return this organizer for Day 2.</p>
 <div class="actions"><button type="button" id="download" class="primary">Download Day 1 PDF</button><button type="button" id="print">Print / Save as PDF</button></div>
 <p id="feedback" role="status" aria-live="polite"></p>
 </section>
@@ -596,6 +607,7 @@ const day1Scores = marking.scores;
 const day1Total = Object.values(day1Scores).reduce((sum, marks) => sum + marks, 0);
 const scoreLine = marking.categories.map(([code]) => code + " ___/" + day1Scores[code]).join("   ·   ")
   + "   ·   Day 1 total ___/" + day1Total;
+const organizerPurpose = "Day 1 exegesis and four senses organizer. Use these responses and verse references on Day 2.";
 const planner = [
   ["plan-identity", "Details worth a second look"],
   ["plan-today", "A connection to strengthen"],
@@ -880,6 +892,7 @@ function downloadPdf() {
     header(true);
     paragraph(content.meta, { bold: true, gap: 4 });
     paragraph(content.title, { gap: 6 });
+    paragraph(organizerPurpose, { size: 9.5, gap: 6 });
     paragraph(scoreLine, { bold: true, size: 9.5, gap: 11 });
     for (const [label, response] of content.responses) {
       paragraph(label, { bold: true, size: 11, gap: 3, reserve: 25 });
@@ -933,7 +946,7 @@ function printPdf() {
   if (!requireComplete()) return;
   const content = exportContent();
   const page = byId("print-sheet");
-  page.replaceChildren(element("p", "HRE4M1 · Unit 2 · ICA 2"), element("h1", "Who Is Jesus?"), element("p", content.meta), element("p", content.title), element("p", scoreLine));
+  page.replaceChildren(element("p", "HRE4M1 · Unit 2 · ICA 2"), element("h1", "Who Is Jesus?"), element("p", content.meta), element("p", content.title), element("p", organizerPurpose), element("p", scoreLine));
   for (const [label, response] of [...content.responses, ...(content.notes ? [["Reading notes", content.notes]] : [])]) {
     const block = element("section", "", "response");
     block.append(element("h3", label), element("p", response));
